@@ -1,12 +1,52 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
+//variable to get current date 
+var today = moment().format("dddd, MMMM Do YYYY ");
 
-//Create Variable for Day planner
-//Variable for Day planner should be an object as Application has id, dHour, time, ampm, and dataPlanner.
+//variable to current time
+var currently = moment().format("H A");
+
+// current day
+$("#currentDay").text(today);
 
 
-// variables to define
-// variables for hour 9 through 5 pm
+//Variable array for each entry box
+ var plannerDay = [];
+//for loop for the time attribute in the dayPlanner object.
+ for (time = 9; time <= 17; time++) {
+  //variable for the ID which is time minus 9 for the fitst 9:00am timeslot. 
+  var id = time - 9;
+  //variable for dataPlanner as a string
+  var dataPlanner = "";
+  //variable for planner hour
+  var dHour = 0;
 
+//variable for am and pm as a string
+  var ampm = "";
+
+// for loop to get am and pm
+  if (time === 12) {
+    dHour = 12;
+    ampm = "pm";
+  } else if (time > 12) {
+    dHour = time - 12;
+    ampm = "pm";
+  } else if (time < 12) {
+    dHour = time;
+    ampm = "am";
+  }
+
+  //to get teh hour value as a string
+  dHour = dHour.toString();
+// data planner as an onbject to fill in above 
+  dataPlanner = {
+    id: id,
+    dHour: dHour,
+    time: time,
+    ampm: ampm,
+    dataPlanner: dataPlanner,
+  };
+  //Linking the array variable plannerDay to the dataPlanner object. 
+  plannerDay.push(dataPlanner);
+}
 
 //Create function for settting items though local storage
 //Create function for getting items from local storage
