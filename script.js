@@ -1,8 +1,22 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 
+//Create Variable for Day planner
+//Variable for Day planner should be an object as Application has id, dHour, time, ampm, and dataPlanner.
+
+
 // variables to define
 // variables for hour 9 through 5 pm
-//
+
+
+//Create function for settting items though local storage
+//Create function for getting items from local storage
+
+
+//Create function that pulls more time slot entries. Will need to create html elements in javascript.
+//Will need to link created elements to container element in html
+
+
+//Create a function to select color of past, present, and future in CSS to html in javascript.
 
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
@@ -10,6 +24,10 @@ $(function () {
   // TODO: Add a listener for click events on the save button. This code should
   //for save button
   addEventListener
+  //Click Event will be related to saving local storage.
+  
+
+
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
   // function? How can DOM traversal be used to get the "hour-x" id of the
