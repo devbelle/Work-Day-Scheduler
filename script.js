@@ -54,7 +54,31 @@ $("#currentDay").text(today);
 
 //Create function that pulls more time slot entries. Will need to create html elements in javascript.
 //Will need to link created elements to container element in html
+//for creating each row. Use forEach to create my div tages and place the necessary selector from the plannerDay array
+plannerDay.forEach(function(timeSlot, index) {
+  //the hour slot for each selection
+	var timeHour = timeSlot.time;
+  //each fill in color will be dependent on the hour of the day
+	var slotColor = colorRow(timeHour);
+  //the row format, the same as the base index.html file selector info where the new div container is now.
+	var row =
+		'<div class="time-slot" id= "' +
+    //array to pull information from
+		index +
+		'"><div class="row no-gutters input-group"><div class="col-sm col-lg-1 input-group-prepend hour justify-content-sm-end pr-3 pt-3">' +
+		//the hour a user is entering their tasks on
+    timeHour +
+		'</div><textarea class="form-control ' +
+    //adding the color for past, present, or future
+		slotColor +
+		'">' +
+    //the user entry slot where the user will type out what they want to do.
+		timeSlot.event +
+		'</textarea><div class="col-sm col-lg-1 input-group-append"><button class="saveBtn btn-block" type="submit"><i class="fas fa-save"></i></button></div></div></div>';
 
+	// Addiing additional rows for the other time slots
+	$(".container").append(row);
+});
 
 //Create a function to select color of past, present, and future in CSS to html in javascript.
 
