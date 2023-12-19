@@ -10,11 +10,11 @@ To access, copy the repository in github, then use the git clone function in com
 
 Link below:
 
-Screenshot
+
 
 link below:
 
-https://devbelle.github.io/Javascript-Quiz-App/a-start.html
+https://devbelle.github.io/Work-Day-Scheduler/
 
 ##Credits
 
